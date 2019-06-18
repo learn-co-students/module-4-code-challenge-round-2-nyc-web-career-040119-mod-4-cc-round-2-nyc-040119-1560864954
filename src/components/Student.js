@@ -1,14 +1,16 @@
 import React from 'react'
 
-const Student = () => {
-
+const Student = (props) => {
+  // console.log("student", props);
   return (
     <tr>
-      <td>"...your code here"</td>
-      <td>"...your code here"</td>
-      <td>"...your code here"</td>
+      <td>{props.student.name}</td>
+      <td>{props.student.class_year}</td>
+      <td>{props.student.percentage}</td>
       <td>
-        <button className="ui button left">
+        <button
+          onClick={(e)=>props.selectStudent(props.student.id)}
+          className="ui button left">
           Edit
         </button>
       </td>
