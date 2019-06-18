@@ -25,23 +25,34 @@ class CourseContainer extends Component {
   }
 
   changeCourse = (courseId) => {
-    // console.log(courseId);
-    let course = this.state.courses.find(c=>{
-      return c.id===parseInt(courseId, 10)
-    })
-    fetch(`https://bayside-high.herokuapp.com/api/v1/users/164/courses/${courseId}`)
-    .then(r=>r.json())
-    .then(thisCourse=>{
-      // console.log(course);
+    console.log(courseId);
+    if (courseId !== '-- Select Course --') {
+      let course = this.state.courses.find(c=>{
+        return c.id===parseInt(courseId, 10)
+      })
+      fetch(`https://bayside-high.herokuapp.com/api/v1/users/164/courses/${courseId}`)
+      .then(r=>r.json())
+      .then(thisCourse=>{
+        // console.log(course);
+        this.setState({
+          students: thisCourse.students,
+          currentCourse: course,
+          currentStudent: {},
+          name: '',
+          class_year: '',
+          percentage: ''
+        })
+      })
+    } else {
       this.setState({
-        students: thisCourse.students,
-        currentCourse: course,
+        currentCourse: {},
+        students: [],
         currentStudent: {},
         name: '',
         class_year: '',
         percentage: ''
       })
-    })
+    }
   }
 
   selectStudent = (studentId) => {
