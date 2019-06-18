@@ -1,12 +1,17 @@
 import React from 'react'
 
-const Student = () => {
+const Student = (props) => {
+  // componentDidMount() {
+  // fetch(`https://bayside-high.herokuapp.com/api/v1/users/162/courses/${this.props.currentCourse}`)
+  //   .then(response => response.json())
+  //   .then(students => this.setState({ students }));
+  // }
 
   return (
     <tr>
-      <td>"...your code here"</td>
-      <td>"...your code here"</td>
-      <td>"...your code here"</td>
+      <td>{props.student.name}</td>
+      <td>{props.student.class_year}</td>
+      <td>{props.student.percentage}</td>
       <td>
         <button className="ui button left">
           Edit
