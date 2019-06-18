@@ -23,6 +23,8 @@ const StudentsList = (props) => {
 
         {props.students.map(s=>{
           return <Student student={s} key={s.id} selectStudent={props.selectStudent} />
+        }).sort((a,b)=>{
+          return a.props.student.name.localeCompare(b.props.student.name)
         })}
       </tbody>
     </table>

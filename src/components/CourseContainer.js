@@ -5,10 +5,10 @@ import StudentsList from "./StudentsList"
 
 class CourseContainer extends Component {
   state = {
-    students: [],
-    currentStudent: {},
     courses: [],
     currentCourse: {},
+    students: [],
+    currentStudent: {},
     name: '',
     class_year: '',
     percentage: ''
@@ -35,7 +35,11 @@ class CourseContainer extends Component {
       // console.log(course);
       this.setState({
         students: thisCourse.students,
-        currentCourse: course
+        currentCourse: course,
+        currentStudent: {},
+        name: '',
+        class_year: '',
+        percentage: ''
       })
     })
   }
