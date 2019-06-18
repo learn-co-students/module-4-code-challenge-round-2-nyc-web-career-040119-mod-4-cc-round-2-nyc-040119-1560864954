@@ -12,7 +12,7 @@ Before the code challenge begins, you will receive a user ID from your instructo
 
 1. Fork and clone this repository.
 2. After cloning down the project, run `npm install`.
-3. You can boot up the server with `npm start`. It should automaticaly run on `localhost:3000`.
+3. You can boot up the server with `npm start`. It should automatically run on `localhost:3000`.
 4. The backend for this code challenge is hosted on heroku at: https://bayside-high.herokuapp.com/, and the specific endpoints available for use are listed below in the deliverables section.
 5. The app uses [Semantic UI](https://semantic-ui.com/) for styling. If you see any unfamiliar classNames on some components, don't sweat! That's coming from Semantic UI and you shouldn't need to touch it.
 
