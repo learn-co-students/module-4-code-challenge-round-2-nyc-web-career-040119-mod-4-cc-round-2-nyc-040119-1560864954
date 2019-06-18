@@ -1,7 +1,17 @@
 import React from "react";
 import Student from "./Student";
 
-const StudentsList = () => {
+const StudentsList = (props) => {
+  const generateStudent = () =>  {
+    return props.students.map(student => {
+      return <Student
+                key={student.id}
+                student={student}
+                handleClick={props.handleClick}
+              />
+
+    })
+  }
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -19,8 +29,8 @@ const StudentsList = () => {
             <h3 className="ui center aligned header">Edit</h3>
           </th>
         </tr>
+        {generateStudent()}
 
-        {/* Your code here */}
       </tbody>
     </table>
   );
