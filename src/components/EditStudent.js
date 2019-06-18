@@ -1,7 +1,7 @@
 import React from 'react'
 
 const EditStudent = (props) => {
-  // console.log("edit student", props);
+  console.log("edit student", props);
   return (
     <form
       className="ui form center aligned sixteen wide column"
@@ -15,6 +15,7 @@ const EditStudent = (props) => {
             type="text"
             onChange={props.editStudent}
             value={props.name}
+          
           />
         </div>
         <div className="four wide field">
@@ -23,6 +24,7 @@ const EditStudent = (props) => {
             type="number"
             onChange={props.editStudent}
             value={props.classYear}
+          
           />
         </div>
         <div className="four wide field">
@@ -31,6 +33,7 @@ const EditStudent = (props) => {
             type="number"
             onChange={props.editStudent}
             value={props.percentage}
+          
           />
         </div>
         <button className="ui button" type="submit">

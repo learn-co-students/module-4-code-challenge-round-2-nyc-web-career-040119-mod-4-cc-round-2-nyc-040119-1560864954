@@ -25,7 +25,7 @@ class CourseContainer extends Component {
   }
 
   changeCourse = (courseId) => {
-    console.log(courseId);
+    // console.log(courseId);
     if (courseId !== '-- Select Course --') {
       let course = this.state.courses.find(c=>{
         return c.id===parseInt(courseId, 10)
