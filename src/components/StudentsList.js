@@ -1,7 +1,19 @@
 import React from "react";
 import Student from "./Student";
 
-const StudentsList = () => {
+const StudentsList = (props) => {
+  let studentsLi = () => {
+   let mapped = props.students.map((student)=> {
+     console.log(student)
+      return <Student id={student.id} 
+                      key={student.name}
+                      name={student.name} 
+                      year={student.class_year} 
+                      percentage={student.percentage}
+                      editStudent={props.editStudent}/>
+    })
+    return mapped
+  }
   return (
     <table className="ui celled striped padded table">
       <tbody>
@@ -20,7 +32,7 @@ const StudentsList = () => {
           </th>
         </tr>
 
-        {/* Your code here */}
+        {studentsLi()}
       </tbody>
     </table>
   );
